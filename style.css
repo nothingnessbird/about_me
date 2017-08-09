@@ -1,11 +1,13 @@
 * {
   background-color: teal;
   font-family: helvetica;
-  width: 700px;
+  box-sizing: border-box;
+  margin: auto;
   }
   
 .main {
 font-family: garamond;
+padding: 1%;
 }
 
 img.large {
