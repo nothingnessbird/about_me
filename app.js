@@ -12,9 +12,9 @@ console.log('q: chinook y/n (y)');
 console.log(chinook);
 
 if(chinook.toUpperCase() === 'Y' || chinook.toUpperCase() === 'YES') {
+  console.log(counter);
   alert('Think you\'re a smartypants, huh? Well they won\'t all be that easy! that one was a gimme! You probably knew I worked for a bush plane company in Alaska, sending climbers up to base camp on Denali, and got to go up myself a few times in the Chinooks the National Guard uses to help get camp ready for the season. Ready for the next one?');
   counter++;
-  console.log(counter);
 } else if (chinook.toUpperCase() === 'N' || chinook.toUpperCase() === 'NO') {
   alert('Bahahahaha! Nice try big shot! I HAVE been in a Chinook with my dog, when I worked for a bush plane company in Alaska, sending climbers up to base camp on Denali, and got to go up myself a few times in the Chinooks the National Guard uses to help get camp ready for the season. Better luck next time, dweeb! NEXT QUESTION');
 } else {
@@ -26,9 +26,9 @@ console.log('q: states y/n (y)');
 console.log(states);
 
 if(states.toUpperCase() === 'Y' || states.toUpperCase() === 'YES') {
+  console.log(counter);
   alert('Alright, maybe you\'re not a complete waste of brainspace. I guess it\'s not *that* unbelievable for someone to have been to 46 states. I did hitchhike most of that, though, betcha didn\'t know that! Next question!');
   counter++;
-  console.log(counter);
 } else if (states.toUpperCase() === 'N' || states.toUpperCase() === 'NO') {
   alert('HAHA YOU SUCK! I mean...WRONG! I mean...Yeah, no, I really have been to 46 states. I even hitchhiked most of that! Anyway, you can still get the next one right (maybe, I doubt it, though.)');
 } else {
@@ -40,9 +40,9 @@ console.log('q: canyon y/n (n)');
 console.log(canyon);
 
 if(canyon.toUpperCase() === 'N' || canyon.toUpperCase() === 'NO') {
+  console.log(counter);
   alert('Well, well, well. You\'re smarter than the average bear. I\'ve never even *been* to the Grand Canyon. (though I have been to the Grand Canyon of the Yellowstone [I\'ll link to that on the page if you\'ve never heard of it.]) On to the next! You have two questions left.');
   counter++;
-  console.log(counter);
 } else if (canyon.toUpperCase() === 'Y' || canyon.toUpperCase() === 'YES') {
   alert('HAH! That was a lie! I haven\'t even been to the Grand Canyon at all.(though I have been to the Grand Canyon of the Yellowstone [I\'ll link to that on the page if you\'ve never heard of it.]) On to the next! You have two questions left, in TRUTH OR LIE, before the next part starts.');
 } else {
@@ -54,9 +54,9 @@ console.log('q: bear y/n (y)');
 console.log(bear);
 
 if(bear.toUpperCase() === 'Y' || bear.toUpperCase() === 'YES') {
+  console.log(counter);
   alert('Yeah yeah yeah, you probably heard me tell that story before, or are friends with me on facebook or something. I ought to bive half credit for that one. But yeah, apparently near Destruction Bay is the highest concentration of grizzly bears in North America. No Shit! Scared the crap out of the dog, that\'s for sure. Had to hitchhike all the way back to Talkeetna. Moving on!');
   counter++;
-  console.log(counter);
 } else if (bear.toUpperCase() === 'N' || bear.toUpperCase() === 'NO') {
   alert('You\'re not too bright, are you? I even foreshadowed that shit. Oh well. You can\'t help what don\'t want helped. Last question coming up. Good luck (you\'re gonna need it.)');
 } else {
@@ -68,9 +68,9 @@ console.log('q: salmon y/n (y)');
 console.log(salmon);
 
 if(salmon.toUpperCase() === 'Y' || salmon.toUpperCase() === 'YES') {
+  console.log(counter);
   alert('Alright, you got me...I GOT THAT FISH! That\'s the end of the lying portion, stay tuned for the rest of The Game!');
   counter++;
-  console.log(counter);
 }else if (salmon.toUpperCase() === 'N' || salmon.toUpperCase() === 'NO') {
   alert('Whaddaya take me for, huh? I damn well DID catch a 40lb king; no fish stories here, I got proof. I hope you don\'t SUCK so badat the next part, doubty mcdoubtface.');
 } else {
@@ -80,22 +80,36 @@ if(salmon.toUpperCase() === 'Y' || salmon.toUpperCase() === 'YES') {
 var ashportation = prompt('OK, new type of question! Are you ready? Can you follow directions? It\' super simple. My dog, Asha, is a service dog. She\'s been on a whole lot of different forms of transportation. I want you to GUESS how many forms of *water-based* (think like boats or ferries or jetskis) types of transportation Asha has been on. Enter your guess below. You get FOUR tries, so make the best of them.');
 console.log('q: ashportation num (27)');
 
+var ashportationcounter = 0;
+console.log(ashportationcounter);
 for (var i = 0; i < 4; i++) {
   if (parseInt(ashportation) === 27) {
+    console.log(counter);
     alert('HOLY COW! How did you guess that right off?! One and done. Great job. I almost want to give you two points (but I won\'t). Your prize is....another question!');
     counter++;
-    console.log(counter);
     break;
   } else if (parseInt(ashportation) < 27) {
+    console.log(ashportationcounter);
     console.log(ashportation);
     var ashportation = prompt('TOO LOW. Nice try, but no dice. Give it another go, hot shot.');
+    ashportationcounter++;
   } else if (parseInt(ashportation) > 27) {
     console.log(ashportation);
-    var ashportation = prompt('TOO LOW. Nice try, but no dice. Give it another go, hot shot.');
+    console.log(ashportationcounter);
+    var ashportation = prompt('TOO HIGH. Nice try, but no dice. Give it another go, hot shot.');
+    ashportationcounter++;
   } else {
     console.log(ashportation);
+    console.log(ashportationcounter);
     var ashportation = prompt('YOU DIDN\'T FOLLOW DIRECTIONS, NUMBSKULL. I SAID ENTER A NUMBER. Give it another go, hot shot.');
+    ashportationcounter++;
   }
+}
+
+if (ashportationcounter === 4) {
+  alert('FOUR TRIES and you never got it?! You\'re lucky I\'m giving you SIX in the next question.');
+} else if (ashportationcounter > 0) {
+  alert('Not toooooo bad..... it only took you ' + ashportationcounter + '/4 tries to get it. WITH HELP. I hope you do a little better on the next one, slick, it\'s your last chance');
 }
 
 alert('You made it all the way to the last question! (somehow) Now it\'s time for (you guessed it) another guessing game! I talked about a king (Chinook) salmon earlier, this question is about *non* salmon fish. Five of my favorite fish to go fishing for in Alaska are not types of salmon (though some may be salmonids). If you can guess even ONE of them (and I\'m gonna give you SIX tries for this), you get a point! Are you ready?');
