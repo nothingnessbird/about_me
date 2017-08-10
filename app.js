@@ -7,16 +7,17 @@ console.log(name);
 
 alert('WELCOME TO THE GAME, ' + name.toUpperCase() + '. Don\'t worry, it\'s not a very complicated game. The game is called THE LYING GAME (a friendly get to know ya). Are you ready to play? There are a couple different parts to the game. The first part is called TRUTH OR LIE? The rules are simple, you just answer yes if you think what I said is a truth, and no is you think it\'s the lie. If you don\'t follow the rules, I\'m gonna know you suck, and tell you so. Let\'s begin! (If you think you can hack it.)');
 
+//internal array elements in this order: question, correct answer array, correct response, incorrect response, else response, incorrect answer array.
+var questionArray = [
+  ['I have ridden in a military Chinook helicopter with my dog. (Remember, yes for truth, no for lie.', ['yes','y'], 'Think you\'re a smartypants, huh? Well they won\'t all be that easy! that one was a gimme! You probably knew I worked for a bush plane company in Alaska, sending climbers up to base camp on Denali, and got to go up myself a few times in the Chinooks the National Guard uses to help get camp ready for the season. Ready for the next one?', 'Bahahahaha! Nice try big shot! I HAVE been in a Chinook with my dog, when I worked for a bush plane company in Alaska, sending climbers up to base camp on Denali, and got to go up myself a few times in the Chinooks the National Guard uses to help get camp ready for the season. Better luck next time, dweeb! NEXT QUESTION', 'LEARN HOW TO FOLLOW SIMPLE DIRECTIONS DUMMY', ['n','no']],
+  ['OK, try this one on for size: I have been to 46 of the United States (yes for truth, no for lie)', ['yes','y'], 'Alright, maybe you\'re not a complete waste of brainspace. I guess it\'s not *that* unbelievable for someone to have been to 46 states. I did hitchhike most of that, though, betcha didn\'t know that! Next question!', 'HAHA YOU SUCK! I mean...WRONG! I mean...Yeah, no, I really have been to 46 states. I even hitchhiked most of that! Anyway, you can still get the next one right (maybe, I doubt it, though.)', 'SERIOUSLY? ARE YOU REALLY THAT INCAPABLE OF FOLLOWING SIMPLE INSTRUCTIONS? YES OR NO!', ['n','no']],
+  ['Here\'s a good one for ya: I\'ve ridden a burro to the bottom of the Grand Canyon (yes for truth, no for lie)', ['n', 'no'], 'Well, well, well. You\'re smarter than the average bear. I\'ve never even *been* to the Grand Canyon. (though I have been to the Grand Canyon of the Yellowstone [I\'ll link to that on the page if you\'ve never heard of it.]) On to the next! You have two questions left.', 'HAH! That was a lie! I haven\'t even been to the Grand Canyon at all.(though I have been to the Grand Canyon of the Yellowstone [I\'ll link to that on the page if you\'ve never heard of it.]) On to the next! You have two questions left, in TRUTH OR LIE, before the next part starts.', 'OK, ' + name.toUpperCase() + '. I AM STARTING TO GET PISSED OFF HERE. DO YOU EVEN WANT TO PLAY? IT IS SO SIMPLE. YES OR NO. Y OR N. EASY PEASY.', ['y','yes']],
+  ['Speaking of bears, this one time, driving from Alaska south through Canada, I totaled a 3/4 ton pickup truck on a grizzly bear. (yes for truth, no for lie)', ['y', 'yes'], 'Yeah yeah yeah, you probably heard me tell that story before, or are friends with me on facebook or something. I ought to bive half credit for that one. But yeah, apparently near Destruction Bay is the highest concentration of grizzly bears in North America. No Shit! Scared the crap out of the dog, that\'s for sure. Had to hitchhike all the way back to Talkeetna. Moving on!', 'You\'re not too bright, are you? I even foreshadowed that shit. Oh well. You can\'t help what don\'t want helped. Last question coming up. Good luck (you\'re gonna need it.)', 'YOU AREN\'T EVEN PLAYING, ARE YOU?', ['n','no']],
+  ['Staying on theme...I once caught a 40lb King salmon (that\'s a Chinook salmon, just to throw in a little call-back) (yes for truth, no for lie)', ['y', 'yes'], 'Alright, you got me...I GOT THAT FISH! That\'s the end of the lying portion, stay tuned for the rest of The Game!', 'Whaddaya take me for, huh? I damn well DID catch a 40lb king; no fish stories here, I got proof. I hope you don\'t SUCK so badat the next part, doubty mcdoubtface.', 'GOOD JOB NOT EVEN TRYING ASSHOLE. The lying part is done, I hope you do a little better on the next part.', ['n','no']]
+];
+
 function lyingGame() {
   for (var i = 0; i < questionArray.length; i++) {
-    //internal array elements in this order: question, correct answer array, correct response, incorrect response, else response, incorrect answer array.
-    var questionArray = [
-      ['I have ridden in a military Chinook helicopter with my dog. (Remember, yes for truth, no for lie.', ['yes','y'], 'Think you\'re a smartypants, huh? Well they won\'t all be that easy! that one was a gimme! You probably knew I worked for a bush plane company in Alaska, sending climbers up to base camp on Denali, and got to go up myself a few times in the Chinooks the National Guard uses to help get camp ready for the season. Ready for the next one?', 'Bahahahaha! Nice try big shot! I HAVE been in a Chinook with my dog, when I worked for a bush plane company in Alaska, sending climbers up to base camp on Denali, and got to go up myself a few times in the Chinooks the National Guard uses to help get camp ready for the season. Better luck next time, dweeb! NEXT QUESTION', 'LEARN HOW TO FOLLOW SIMPLE DIRECTIONS DUMMY', ['n','no'],
-      ['OK, try this one on for size: I have been to 46 of the United States (yes for truth, no for lie)', ['yes','y'], 'Alright, maybe you\'re not a complete waste of brainspace. I guess it\'s not *that* unbelievable for someone to have been to 46 states. I did hitchhike most of that, though, betcha didn\'t know that! Next question!', 'HAHA YOU SUCK! I mean...WRONG! I mean...Yeah, no, I really have been to 46 states. I even hitchhiked most of that! Anyway, you can still get the next one right (maybe, I doubt it, though.)', 'SERIOUSLY? ARE YOU REALLY THAT INCAPABLE OF FOLLOWING SIMPLE INSTRUCTIONS? YES OR NO!', ['n','no'],
-      ['Here\'s a good one for ya: I\'ve ridden a burro to the bottom of the Grand Canyon (yes for truth, no for lie)', ['n', 'no'], 'Well, well, well. You\'re smarter than the average bear. I\'ve never even *been* to the Grand Canyon. (though I have been to the Grand Canyon of the Yellowstone [I\'ll link to that on the page if you\'ve never heard of it.]) On to the next! You have two questions left.', 'HAH! That was a lie! I haven\'t even been to the Grand Canyon at all.(though I have been to the Grand Canyon of the Yellowstone [I\'ll link to that on the page if you\'ve never heard of it.]) On to the next! You have two questions left, in TRUTH OR LIE, before the next part starts.', 'OK, ' + name.toUpperCase() + '. I AM STARTING TO GET PISSED OFF HERE. DO YOU EVEN WANT TO PLAY? IT IS SO SIMPLE. YES OR NO. Y OR N. EASY PEASY.', ['n','no'],
-      ['Speaking of bears, this one time, driving from Alaska south through Canada, I totaled a 3/4 ton pickup truck on a grizzly bear. (yes for truth, no for lie)', ['y', 'yes'], 'Yeah yeah yeah, you probably heard me tell that story before, or are friends with me on facebook or something. I ought to bive half credit for that one. But yeah, apparently near Destruction Bay is the highest concentration of grizzly bears in North America. No Shit! Scared the crap out of the dog, that\'s for sure. Had to hitchhike all the way back to Talkeetna. Moving on!', 'You\'re not too bright, are you? I even foreshadowed that shit. Oh well. You can\'t help what don\'t want helped. Last question coming up. Good luck (you\'re gonna need it.)', 'YOU AREN\'T EVEN PLAYING, ARE YOU?', ['n','no'],
-      ['Staying on theme...I once caught a 40lb King salmon (that\'s a Chinook salmon, just to throw in a little call-back) (yes for truth, no for lie)', ['y', 'yes'], 'Alright, you got me...I GOT THAT FISH! That\'s the end of the lying portion, stay tuned for the rest of The Game!', 'Whaddaya take me for, huh? I damn well DID catch a 40lb king; no fish stories here, I got proof. I hope you don\'t SUCK so badat the next part, doubty mcdoubtface.', 'GOOD JOB NOT EVEN TRYING ASSHOLE. The lying part is done, I hope you do a little better on the next part.', ['n','no']
-    ];
     var userInput = prompt(questionArray[i][0]);
     console.log(questionArray[i][0]);
     console.log(questionArray[i][1]);
@@ -30,68 +31,11 @@ function lyingGame() {
       alert(questionArray[i][3]);
     } else {
       alert(questionArray[i][4]);
+    }
   }
 }
-var chinook = prompt('I have ridden in a military Chinook helicopter with my dog. (Remember, yes for truth, no for lie.)');
-console.log('q: chinook y/n (y)');
-console.log(chinook);
 
-
-var states = prompt('OK, try this one on for size: I have been to 46 of the United States (yes for truth, no for lie)');
-console.log('q: states y/n (y)');
-console.log(states);
-
-if(states.toUpperCase() === 'Y' || states.toUpperCase() === 'YES') {
-  console.log(counter);
-  alert('Alright, maybe you\'re not a complete waste of brainspace. I guess it\'s not *that* unbelievable for someone to have been to 46 states. I did hitchhike most of that, though, betcha didn\'t know that! Next question!');
-  counter++;
-} else if (states.toUpperCase() === 'N' || states.toUpperCase() === 'NO') {
-  alert('HAHA YOU SUCK! I mean...WRONG! I mean...Yeah, no, I really have been to 46 states. I even hitchhiked most of that! Anyway, you can still get the next one right (maybe, I doubt it, though.)');
-} else {
-  alert('SERIOUSLY? ARE YOU REALLY THAT INCAPABLE OF FOLLOWING SIMPLE INSTRUCTIONS? YES OR NO!');
-}
-
-var canyon = prompt('Here\'s a good one for ya: I\'ve ridden a burro to the bottom of the Grand Canyon (yes for truth, no for lie)');
-console.log('q: canyon y/n (n)');
-console.log(canyon);
-
-if(canyon.toUpperCase() === 'N' || canyon.toUpperCase() === 'NO') {
-  console.log(counter);
-  alert('Well, well, well. You\'re smarter than the average bear. I\'ve never even *been* to the Grand Canyon. (though I have been to the Grand Canyon of the Yellowstone [I\'ll link to that on the page if you\'ve never heard of it.]) On to the next! You have two questions left.');
-  counter++;
-} else if (canyon.toUpperCase() === 'Y' || canyon.toUpperCase() === 'YES') {
-  alert('HAH! That was a lie! I haven\'t even been to the Grand Canyon at all.(though I have been to the Grand Canyon of the Yellowstone [I\'ll link to that on the page if you\'ve never heard of it.]) On to the next! You have two questions left, in TRUTH OR LIE, before the next part starts.');
-} else {
-  alert('OK, ' + name.toUpperCase() + '. I AM STARTING TO GET PISSED OFF HERE. DO YOU EVEN WANT TO PLAY? IT IS SO SIMPLE. YES OR NO. Y OR N. EASY PEASY.');
-}
-
-var bear = prompt('Speaking of bears, this one time, driving from Alaska south through Canada, I totaled a 3/4 ton pickup truck on a grizzly bear. (yes for truth, no for lie)');
-console.log('q: bear y/n (y)');
-console.log(bear);
-
-if(bear.toUpperCase() === 'Y' || bear.toUpperCase() === 'YES') {
-  console.log(counter);
-  alert('Yeah yeah yeah, you probably heard me tell that story before, or are friends with me on facebook or something. I ought to bive half credit for that one. But yeah, apparently near Destruction Bay is the highest concentration of grizzly bears in North America. No Shit! Scared the crap out of the dog, that\'s for sure. Had to hitchhike all the way back to Talkeetna. Moving on!');
-  counter++;
-} else if (bear.toUpperCase() === 'N' || bear.toUpperCase() === 'NO') {
-  alert('You\'re not too bright, are you? I even foreshadowed that shit. Oh well. You can\'t help what don\'t want helped. Last question coming up. Good luck (you\'re gonna need it.)');
-} else {
-  alert('YOU AREN\'T EVEN PLAYING, ARE YOU?');
-}
-
-var salmon = prompt('Staying on theme...I once caught a 40lb King salmon (that\'s a Chinook salmon, just to throw in a little call-back) (yes for truth, no for lie)');
-console.log('q: salmon y/n (y)');
-console.log(salmon);
-
-if(salmon.toUpperCase() === 'Y' || salmon.toUpperCase() === 'YES') {
-  console.log(counter);
-  alert('Alright, you got me...I GOT THAT FISH! That\'s the end of the lying portion, stay tuned for the rest of The Game!');
-  counter++;
-}else if (salmon.toUpperCase() === 'N' || salmon.toUpperCase() === 'NO') {
-  alert('Whaddaya take me for, huh? I damn well DID catch a 40lb king; no fish stories here, I got proof. I hope you don\'t SUCK so badat the next part, doubty mcdoubtface.');
-} else {
-  alert('GOOD JOB NOT EVEN TRYING ASSHOLE. The lying part is done, I hope you do a little better on the next part.');
-}
+lyingGame();
 
 var ashportation = prompt('OK, new type of question! Are you ready? Can you follow directions? It\' super simple. My dog, Asha, is a service dog. She\'s been on a whole lot of different forms of transportation. I want you to GUESS how many forms of *water-based* (think like boats or ferries or jetskis) types of transportation Asha has been on. Enter your guess below. You get FOUR tries, so make the best of them.');
 console.log('q: ashportation num (27)');
