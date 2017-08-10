@@ -105,7 +105,7 @@ function fish() {
     } else if (!fishArray[1].includes(fishGuess.toLowerCase())) {
       console.log(fishGuess);
       console.log(fishcounter);
-      alert(fishArray[2]);
+      var fishGuess = prompt(fishArray[2]);
       fishcounter++;
     }
   }
@@ -119,10 +119,12 @@ function fish() {
   }
 }
 
+fish();
+
 if(counter === 7) {
   alert('Holy crap, ' + name + '! What are you?! A stalker?! You got 7/7 correct! How did you know so damn much about me? I don\'t know if you\'re preternaturally good at guessing games, have *really* good luck, or you\'ve been playing this game over and over until you got them all right. Whatever it is, I\'m creeped out. But I guess you can look at the page anyway and see some pictures and stuff of me in the Last Frontier. Have fun creep!');
 } else if (counter >= 3 && counter <= 6) {
-  ('Not too shabby, ' + name + '. I grudgingly concede that you\'re not complete shit at guessing games (or you cheated and played more than once). You got ' + counter + '/7 correct. That\'s not the worst score I\'ve ever seen. You may not feast your eyes on pictures and information of yours truly in the Last Frontier.');
+  alert('Not too shabby, ' + name + '. I grudgingly concede that you\'re not complete shit at guessing games (or you cheated and played more than once). You got ' + counter + '/7 correct. That\'s not the worst score I\'ve ever seen. You may not feast your eyes on pictures and information of yours truly in the Last Frontier.');
 } else if (counter === 2 || counter === 1) {
   alert('Oh come ON, ' + name + '. IS that *really* the best you can do? ' + counter + '/7? That\'s pathetic. I almost don\'t even want you to see my page, but I guess you can...It\'s a bunch of awesome pictures and stuff about me in the Last Frontier. You definitely don\'t deserve it, but have at it.');
 } else if (counter === 0) {
