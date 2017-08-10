@@ -101,10 +101,14 @@ for (var i = 0; i < 4; i++) {
 alert('You made it all the way to the last question! (somehow) Now it\'s time for (you guessed it) another guessing game! I talked about a king (Chinook) salmon earlier, this question is about *non* salmon fish. Five of my favorite fish to go fishing for in Alaska are not types of salmon (though some may be salmonids). If you can guess even ONE of them (and I\'m gonna give you SIX tries for this), you get a point! Are you ready?');
 
 var fishArray = ['rainbow trout', 'burbot', 'halibut', 'dolly varden', 'steelhead'];
-for (var i = 0; i < 6; i++) {
+var fishGuess = prompt('GUESS A FISH: guess one of my five favorite non-salmon (salmonids are ok) fish to fish for in Alaska');
+console.log('q:fishGuess fish' + fishArray);
+console.log();
 
-  var fishGuess = prompt('GUESS A FISH: guess one of my five favorite non-salmon (salmonids are ok) fish to fish for in Alaska');
-}
+//for (var i = 0; i < 6; i++) {
+//  if (fishArray.indexOf(fishGuess) === -1) {
+//  }
+//}
 
 if(counter === 5) {
   alert('Holy crap, ' + name + '! What are you?! A stalker?! You got 5/5 correct! How did you know so damn much about me? I don\'t know if you\'re preternaturally good at guessing games, have *really* good luck, or you\'ve been playing this game over and over until you got them all right. Whatever it is, I\'m creeped out. But I guess you can look at the page anyway and see some pictures and stuff of me in the Last Frontier. Have fun creep!');
