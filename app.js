@@ -5,7 +5,7 @@ var counter = 0;
 var name = prompt('What\'s your name, buddy?');
 console.log(name);
 
-alert('WELCOME TO THE GAME. Don\'t worry, it\'s not a very complicated game. The game is called FOUR TRUTHS AND A LIE. I\'m going to tell you something that I, Kinley, have done or experienced at some point in my life....but one of things is going to be a lie. Which one\'s the lie? Well that\'s up to you to figure out. Are you ready to play? The rules are simple, you just answer yes if you think what I said is a truth, and no is you think it\'s the lie. Remember the name of the game is FOUR TRUTHS AND A LIE and I *will* be keeping score, so if you keep marking no, I\'m gonna know you suck, and tell you so. Let\'s begin! (If you think you can hack it.)');
+alert('WELCOME TO THE GAME, ' + name.toUpperCase() + '. Don\'t worry, it\'s not a very complicated game. The game is called THE LYING GAME (a friendly get to know ya). Are you ready to play? There are a couple different parts to the game. The first part is called TRUTH OR LIE? The rules are simple, you just answer yes if you think what I said is a truth, and no is you think it\'s the lie. If you don\'t follow the rules, I\'m gonna know you suck, and tell you so. Let\'s begin! (If you think you can hack it.)');
 
 var chinook = prompt('I have ridden in a military Chinook helicopter with my dog. (Remember, yes for truth, no for lie.)');
 console.log('q: chinook y/n (y)');
@@ -44,7 +44,7 @@ if(canyon.toUpperCase() === 'N' || canyon.toUpperCase() === 'NO') {
   counter++;
   console.log(counter);
 } else if (canyon.toUpperCase() === 'Y' || canyon.toUpperCase() === 'YES') {
-  alert('HAH! That was the lie! Assuming I told you the truth in the first place and there\'s only one lie. But I haven\'t even been to the Grand Canyon at all.(though I have been to the Grand Canyon of the Yellowstone [I\'ll link to that on the page if you\'ve never heard of it.]) On to the next! You have two questions left.');
+  alert('HAH! That was a lie! I haven\'t even been to the Grand Canyon at all.(though I have been to the Grand Canyon of the Yellowstone [I\'ll link to that on the page if you\'ve never heard of it.]) On to the next! You have two questions left, in TRUTH OR LIE, before the next part starts.');
 } else {
   alert('OK, ' + name.toUpperCase() + '. I AM STARTING TO GET PISSED OFF HERE. DO YOU EVEN WANT TO PLAY? IT IS SO SIMPLE. YES OR NO. Y OR N. EASY PEASY.');
 }
@@ -71,13 +71,14 @@ if(salmon.toUpperCase() === 'Y' || salmon.toUpperCase() === 'YES') {
   alert('Alright, you got me...I GOT THAT FISH! That\'s the end of the lying portion, stay tuned for the rest of The Game!');
   counter++;
   console.log(counter);
+}else if (salmon.toUpperCase() === 'N' || salmon.toUpperCase() === 'NO') {
+  alert('Whaddaya take me for, huh? I damn well DID catch a 40lb king; no fish stories here, I got proof. I hope you don\'t SUCK so badat the next part, doubty mcdoubtface.');
 } else {
   alert('GOOD JOB NOT EVEN TRYING ASSHOLE. The lying part is done, I hope you do a little better on the next part.');
 }
 
-var ashportation = prompt('OK, new type of question! Are you ready? Can you follow directions? It\' super simple. My dog, Asha, is a service dog. She\'s been on a whole lot of different forms of transportation. I want you to GUESS how many forms of *water-based* (think like boats or ferries or jetskis) types of transportation Asha has been on. Enter your guess below.');
+var ashportation = prompt('OK, new type of question! Are you ready? Can you follow directions? It\' super simple. My dog, Asha, is a service dog. She\'s been on a whole lot of different forms of transportation. I want you to GUESS how many forms of *water-based* (think like boats or ferries or jetskis) types of transportation Asha has been on. Enter your guess below. You get FOUR tries, so make the best of them.');
 console.log('q: ashportation num (27)');
-console.log(ashportation);
 
 for (var i = 0; i < 4; i++) {
   if (parseInt(ashportation) === 27) {
@@ -86,12 +87,23 @@ for (var i = 0; i < 4; i++) {
     console.log(counter);
     break;
   } else if (parseInt(ashportation) < 27) {
+    console.log(ashportation);
     var ashportation = prompt('TOO LOW. Nice try, but no dice. Give it another go, hot shot.');
   } else if (parseInt(ashportation) > 27) {
+    console.log(ashportation);
     var ashportation = prompt('TOO LOW. Nice try, but no dice. Give it another go, hot shot.');
   } else {
+    console.log(ashportation);
     var ashportation = prompt('YOU DIDN\'T FOLLOW DIRECTIONS, NUMBSKULL. I SAID ENTER A NUMBER. Give it another go, hot shot.');
   }
+}
+
+alert('You made it all the way to the last question! (somehow) Now it\'s time for (you guessed it) another guessing game! I talked about a king (Chinook) salmon earlier, this question is about *non* salmon fish. Five of my favorite fish to go fishing for in Alaska are not types of salmon (though some may be salmonids). If you can guess even ONE of them (and I\'m gonna give you SIX tries for this), you get a point! Are you ready?');
+
+var fishArray = ['rainbow trout', 'burbot', 'halibut', 'dolly varden', 'steelhead'];
+for (var i = 0; i < 6; i++) {
+
+  var fishGuess = prompt('GUESS A FISH: guess one of my five favorite non-salmon (salmonids are ok) fish to fish for in Alaska');
 }
 
 if(counter === 5) {
