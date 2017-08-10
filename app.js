@@ -14,6 +14,7 @@ console.log(chinook);
 if(chinook.toUpperCase() === 'Y' || chinook.toUpperCase() === 'YES') {
   alert('Think you\'re a smartypants, huh? Well they won\'t all be that easy! that one was a gimme! You probably knew I worked for a bush plane company in Alaska, sending climbers up to base camp on Denali, and got to go up myself a few times in the Chinooks the National Guard uses to help get camp ready for the season. Ready for the next one?');
   counter++;
+  console.log(counter);
 } else if (chinook.toUpperCase() === 'N' || chinook.toUpperCase() === 'NO') {
   alert('Bahahahaha! Nice try big shot! I HAVE been in a Chinook with my dog, when I worked for a bush plane company in Alaska, sending climbers up to base camp on Denali, and got to go up myself a few times in the Chinooks the National Guard uses to help get camp ready for the season. Better luck next time, dweeb! NEXT QUESTION');
 } else {
@@ -27,6 +28,7 @@ console.log(states);
 if(states.toUpperCase() === 'Y' || states.toUpperCase() === 'YES') {
   alert('Alright, maybe you\'re not a complete waste of brainspace. I guess it\'s not *that* unbelievable for someone to have been to 46 states. I did hitchhike most of that, though, betcha didn\'t know that! Next question!');
   counter++;
+  console.log(counter);
 } else if (states.toUpperCase() === 'N' || states.toUpperCase() === 'NO') {
   alert('HAHA YOU SUCK! I mean...WRONG! I mean...Yeah, no, I really have been to 46 states. I even hitchhiked most of that! Anyway, you can still get the next one right (maybe, I doubt it, though.)');
 } else {
@@ -40,6 +42,7 @@ console.log(canyon);
 if(canyon.toUpperCase() === 'N' || canyon.toUpperCase() === 'NO') {
   alert('Well, well, well. You\'re smarter than the average bear. I\'ve never even *been* to the Grand Canyon. (though I have been to the Grand Canyon of the Yellowstone [I\'ll link to that on the page if you\'ve never heard of it.]) On to the next! You have two questions left.');
   counter++;
+  console.log(counter);
 } else if (canyon.toUpperCase() === 'Y' || canyon.toUpperCase() === 'YES') {
   alert('HAH! That was the lie! Assuming I told you the truth in the first place and there\'s only one lie. But I haven\'t even been to the Grand Canyon at all.(though I have been to the Grand Canyon of the Yellowstone [I\'ll link to that on the page if you\'ve never heard of it.]) On to the next! You have two questions left.');
 } else {
@@ -53,6 +56,7 @@ console.log(bear);
 if(bear.toUpperCase() === 'Y' || bear.toUpperCase() === 'YES') {
   alert('Yeah yeah yeah, you probably heard me tell that story before, or are friends with me on facebook or something. I ought to bive half credit for that one. But yeah, apparently near Destruction Bay is the highest concentration of grizzly bears in North America. No Shit! Scared the crap out of the dog, that\'s for sure. Had to hitchhike all the way back to Talkeetna. Moving on!');
   counter++;
+  console.log(counter);
 } else if (bear.toUpperCase() === 'N' || bear.toUpperCase() === 'NO') {
   alert('You\'re not too bright, are you? I even foreshadowed that shit. Oh well. You can\'t help what don\'t want helped. Last question coming up. Good luck (you\'re gonna need it.)');
 } else {
@@ -64,9 +68,9 @@ console.log('q: salmon y/n (y)');
 console.log(salmon);
 
 if(salmon.toUpperCase() === 'Y' || salmon.toUpperCase() === 'YES') {
+  alert('Alright, you got me...I GOT THAT FISH! That\'s the end of the lying portion, stay tuned for the rest of The Game!)
   counter++;
-} else if (salmon.toUpperCase() === 'N' || salmon.toUpperCase === 'NO'){
-  counter = counter;
+  console.log(counter);
 } else {
   alert('GOOD JOB NOT EVEN TRYING ASSHOLE');
 }
@@ -76,14 +80,17 @@ console.log('q: ashportation num (27)');
 console.log(ashportation);
 
 for (var i = 0; i < 4; i++) {
-  if (ashportation.parseInt() === 27) {
-    alert('HOLY COW! How did you guess tht right off?! One and done. Great job. I almost want to give you two points (but I won\'t). Your prize is....another question!');
+  if (parseInt(ashportation) === 27) {
+    alert('HOLY COW! How did you guess that right off?! One and done. Great job. I almost want to give you two points (but I won\'t). Your prize is....another question!');
     counter++;
+    console.log(counter);
     break;
-  } else if (ashportation.parseInt() != NaN) {
-    var ashportation = prompt('WRONG. Nice try, but no dice. Give it another go, hot shot.');
+  } else if (parseInt(ashportation) < 27) {
+    var ashportation = prompt('TOO LOW. Nice try, but no dice. Give it another go, hot shot.');
+  } else if (parseInt(ashportation) > 27) {
+    var ashportation = prompt('TOO LOW. Nice try, but no dice. Give it another go, hot shot.');
   } else {
-    var ashportation = prompt('SERIOUSLY? I ASKED IF YOU COULD FOLLOW INSTRUCTIONS. Try again, numbskull.');
+    var ashportation = prompt('YOU DIDN\'T FOLLOW DIRECTIONS, NUMBSKULL. I SAID ENTER A NUMBER. Give it another go, hot shot.');
   }
 }
 
