@@ -37,42 +37,48 @@ function lyingGame() {
 
 lyingGame();
 
-var ashportation = prompt('OK, new type of question! Are you ready? Can you follow directions? It\' super simple. My dog, Asha, is a service dog. She\'s been on a whole lot of different forms of transportation. I want you to GUESS how many forms of *water-based* (think like boats or ferries or jetskis) types of transportation Asha has been on. Enter your guess below. You get FOUR tries, so make the best of them.');
-console.log('q: ashportation num (27)');
+function ashportation() {
+  //question[0], correct answer[1], too low response[2], too high response[3], nonsense answer response[4], correct answer response[5]
+  var ashportationArray = ['OK, new type of question! Are you ready? Can you follow directions? It\' super simple. My dog, Asha, is a service dog. She\'s been on a whole lot of different forms of transportation. I want you to GUESS how many forms of *water-based* (think like boats or ferries or jetskis) types of transportation Asha has been on. Enter your guess below. You get FOUR tries, so make the best of them.', 27, 'TOO LOW. Nice try, but no dice. Give it another go, hot shot.', 'TOO HIGH. Nice try, but no dice. Give it another go, hot shot.', 'YOU DIDN\'T FOLLOW DIRECTIONS, NUMBSKULL. I SAID ENTER A NUMBER. Give it another go, hot shot.', []];
 
-var ashportationcounter = 0;
-for (var i = 0; i < 4; i++) {
-  if (parseInt(ashportation) === 27) {
-    console.log(counter);
-    counter++;
-    break;
-  } else if (parseInt(ashportation) < 27) {
-    console.log(ashportationcounter);
-    console.log(ashportation);
-    ashportationcounter++;
-    var ashportation = prompt('TOO LOW. Nice try, but no dice. Give it another go, hot shot.');
-  } else if (parseInt(ashportation) > 27) {
-    console.log(ashportation);
-    console.log(ashportationcounter);
-    ashportationcounter++;
-    var ashportation = prompt('TOO HIGH. Nice try, but no dice. Give it another go, hot shot.');
-  } else {
-    console.log(ashportation);
-    console.log(ashportationcounter);
-    ashportationcounter++;
-    var ashportation = prompt('YOU DIDN\'T FOLLOW DIRECTIONS, NUMBSKULL. I SAID ENTER A NUMBER. Give it another go, hot shot.');
+  var ashportation = prompt(ashportationArray[0]);
+  console.log(ashportationArray[0]);
+
+  var ashportationcounter = 0;
+  for (var i = 0; i < 4; i++) {
+    if (parseInt(ashportation) === ashportationArray[1]) {
+      console.log(counter);
+      console.log(ashportation);
+      counter++;
+      break;
+    } else if (parseInt(ashportation) < ashportationArray[1]) {
+      console.log(ashportationcounter);
+      console.log(ashportation);
+      ashportationcounter++;
+      var ashportation = prompt(ashportationArray[2]);
+    } else if (parseInt(ashportation) > ashportationArray[1]) {
+      console.log(ashportation);
+      console.log(ashportationcounter);
+      ashportationcounter++;
+      var ashportation = prompt(ashportationArray[3]);
+    } else {
+      console.log(ashportation);
+      console.log(ashportationcounter);
+      ashportationcounter++;
+      var ashportation = prompt(ashportationArray[4]);
+    }
   }
-}
 
-console.log(ashportationcounter);
-if (ashportationcounter === 4) {
-  alert('FOUR TRIES and you never got it?! You\'re lucky I\'m giving you SIX in the next question.');
-} else if (ashportationcounter > 0) {
-  console.log(counter);
-  alert('Not toooooo bad..... it only took you ' + ashportationcounter + '/4 tries to get it. WITH HELP. I hope you do a little better on the next one, slick, it\'s your last chance');
-  counter++;
-} else if (ashportationcounter === 0) {
-  alert('HOLY COW! How did you guess that right off?! One and done. Great job. I almost want to give you two points (but I won\'t). Your prize is....another question!');
+  console.log(ashportationcounter);
+  if (ashportationcounter === 4) {
+    alert('FOUR TRIES and you never got it?! You\'re lucky I\'m giving you SIX in the next question.');
+  } else if (ashportationcounter > 0) {
+    console.log(counter);
+    alert('Not toooooo bad..... it only took you ' + ashportationcounter + '/4 tries to get it. WITH HELP. I hope you do a little better on the next one, slick, it\'s your last chance');
+    counter++;
+  } else if (ashportationcounter === 0) {
+    alert('HOLY COW! How did you guess that right off?! One and done. Great job. I almost want to give you two points (but I won\'t). Your prize is....another question!');
+  }
 }
 
 alert('You made it all the way to the last question! (somehow) Now it\'s time for (you guessed it) another guessing game! I talked about a king (Chinook) salmon earlier, this question is about *non* salmon fish. Five of my favorite fish to go fishing for in Alaska are not types of salmon (though some may be salmonids). If you can guess even ONE of them (and I\'m gonna give you SIX tries for this), you get a point! Are you ready?');
@@ -90,7 +96,7 @@ for (var i = 0; i < 6; i++) {
     var fishGuess = prompt('GUESS AGAIN BOZO (a fish that is not a salmon [it can be a salmonid] that is in my top 5 favorite to fish for in Alaska)');
     fishcounter++;
   } else if (fishArray.indexOf(fishGuess) !== -1 && fishcounter === 0) {
-    alert('WHOA! Great guess, ' + name + '! One shot kill! ' + fishGuess.uppercaseFirstLetter() + ' is indeed one of my top 5 favorite non-salmon fish to go fishing for in Alaska, the whole list is: rainbow trout, burbot, halibut, dolly varden, and arctic char.');
+    alert('WHOA! Great guess, ' + name + '! One shot kill! ' + fishGuess + ' is indeed one of my top 5 favorite non-salmon fish to go fishing for in Alaska, the whole list is: rainbow trout, burbot, halibut, dolly varden, and arctic char.');
     break;
   }
 }
