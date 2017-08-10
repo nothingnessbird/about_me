@@ -81,35 +81,38 @@ var ashportation = prompt('OK, new type of question! Are you ready? Can you foll
 console.log('q: ashportation num (27)');
 
 var ashportationcounter = 0;
-console.log(ashportationcounter);
 for (var i = 0; i < 4; i++) {
   if (parseInt(ashportation) === 27) {
     console.log(counter);
-    alert('HOLY COW! How did you guess that right off?! One and done. Great job. I almost want to give you two points (but I won\'t). Your prize is....another question!');
     counter++;
     break;
   } else if (parseInt(ashportation) < 27) {
     console.log(ashportationcounter);
     console.log(ashportation);
-    var ashportation = prompt('TOO LOW. Nice try, but no dice. Give it another go, hot shot.');
     ashportationcounter++;
+    var ashportation = prompt('TOO LOW. Nice try, but no dice. Give it another go, hot shot.');
   } else if (parseInt(ashportation) > 27) {
     console.log(ashportation);
     console.log(ashportationcounter);
-    var ashportation = prompt('TOO HIGH. Nice try, but no dice. Give it another go, hot shot.');
     ashportationcounter++;
+    var ashportation = prompt('TOO HIGH. Nice try, but no dice. Give it another go, hot shot.');
   } else {
     console.log(ashportation);
     console.log(ashportationcounter);
-    var ashportation = prompt('YOU DIDN\'T FOLLOW DIRECTIONS, NUMBSKULL. I SAID ENTER A NUMBER. Give it another go, hot shot.');
     ashportationcounter++;
+    var ashportation = prompt('YOU DIDN\'T FOLLOW DIRECTIONS, NUMBSKULL. I SAID ENTER A NUMBER. Give it another go, hot shot.');
   }
 }
 
+console.log(ashportationcounter);
 if (ashportationcounter === 4) {
   alert('FOUR TRIES and you never got it?! You\'re lucky I\'m giving you SIX in the next question.');
 } else if (ashportationcounter > 0) {
+  console.log(counter);
   alert('Not toooooo bad..... it only took you ' + ashportationcounter + '/4 tries to get it. WITH HELP. I hope you do a little better on the next one, slick, it\'s your last chance');
+  counter++;
+} else if (ashportationcounter === 0) {
+  alert('HOLY COW! How did you guess that right off?! One and done. Great job. I almost want to give you two points (but I won\'t). Your prize is....another question!');
 }
 
 alert('You made it all the way to the last question! (somehow) Now it\'s time for (you guessed it) another guessing game! I talked about a king (Chinook) salmon earlier, this question is about *non* salmon fish. Five of my favorite fish to go fishing for in Alaska are not types of salmon (though some may be salmonids). If you can guess even ONE of them (and I\'m gonna give you SIX tries for this), you get a point! Are you ready?');
@@ -119,19 +122,35 @@ var fishGuess = prompt('GUESS A FISH: guess one of my five favorite non-salmon (
 console.log('q:fishGuess fish' + fishArray);
 console.log();
 
-//for (var i = 0; i < 6; i++) {
-//  if (fishArray.indexOf(fishGuess) === -1) {
-//  }
-//}
+var fishcounter = 0;
+for (var i = 0; i < 6; i++) {
+  if (fishArray.indexOf(fishGuess) === -1) {
+    console.log(fishcounter);
+    console.log(fishGuess);
+    var fishGuess = prompt('GUESS AGAIN BOZO (a fish that is not a salmon [it can be a salmonid] that is in my top 5 favorite to fish for in Alaska)');
+    fishcounter++;
+  } else if (fishArray.indexOf(fishGuess) !== -1 && fishcounter === 0) {
+    alert('WHOA! Great guess, ' + name + '! One shot kill! ' + fishGuess.uppercaseFirstLetter() + ' is indeed one of my top 5 favorite non-salmon fish to go fishing for in Alaska!');
+    break;
+  }
+}
 
-if(counter === 5) {
-  alert('Holy crap, ' + name + '! What are you?! A stalker?! You got 5/5 correct! How did you know so damn much about me? I don\'t know if you\'re preternaturally good at guessing games, have *really* good luck, or you\'ve been playing this game over and over until you got them all right. Whatever it is, I\'m creeped out. But I guess you can look at the page anyway and see some pictures and stuff of me in the Last Frontier. Have fun creep!');
-} else if (counter === 3 || counter === 4) {
-  ('Not too shabby, ' + name + '. I grudgingly concede that you\'re not complete shit at guessing games (or you cheated and played more than once). You got ' + counter + '/5 correct. That\'s not the worst score I\'ve ever seen. You may not feast your eyes on pictures and information of yours truly in the Last Frontier.');
+if (fishcounter === 6) {
+  alert('SIX GUESSES AND NO DICE? Wow. You know google exists right?');
+} else if (fishcounter > 0) {
+  console.log(counter);
+  alert('Only took you ' + fishcounter + '/6 tries, huh?');
+  counter++;
+}
+
+if(counter === 7) {
+  alert('Holy crap, ' + name + '! What are you?! A stalker?! You got 7/7 correct! How did you know so damn much about me? I don\'t know if you\'re preternaturally good at guessing games, have *really* good luck, or you\'ve been playing this game over and over until you got them all right. Whatever it is, I\'m creeped out. But I guess you can look at the page anyway and see some pictures and stuff of me in the Last Frontier. Have fun creep!');
+} else if (counter >= 3 && counter <= 6) {
+  ('Not too shabby, ' + name + '. I grudgingly concede that you\'re not complete shit at guessing games (or you cheated and played more than once). You got ' + counter + '/7 correct. That\'s not the worst score I\'ve ever seen. You may not feast your eyes on pictures and information of yours truly in the Last Frontier.');
 } else if (counter === 2 || counter === 1) {
-  alert('Oh come ON. IS that *really* the best you can do? ' + counter + '/5? That\'s pathetic. I almost don\'t even want you to see my page, but I guess you can...It\'s a bunch of awesome pictures and stuff about me in the Last Frontier. You definitely don\'t deserve it, but have at it.');
+  alert('Oh come ON, ' + name + '. IS that *really* the best you can do? ' + counter + '/7? That\'s pathetic. I almost don\'t even want you to see my page, but I guess you can...It\'s a bunch of awesome pictures and stuff about me in the Last Frontier. You definitely don\'t deserve it, but have at it.');
 } else if (counter === 0) {
-  alert('YOU GOT 0. FREAKING ZE-RO. HOW DO YOU EVEN GET SUCH A RIDICULOUS SCORE?');
+  alert('YOU GOT 0/7. FREAKING ZE-RO, ' + name.toUpperCase() + '. HOW DO YOU EVEN GET SUCH A RIDICULOUS SCORE?');
   alert('you don\'t know me');
   alert('you don\'t know me at all');
   alert('you don\'t know me');
