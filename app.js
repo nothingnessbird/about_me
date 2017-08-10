@@ -117,7 +117,7 @@ if (ashportationcounter === 4) {
 
 alert('You made it all the way to the last question! (somehow) Now it\'s time for (you guessed it) another guessing game! I talked about a king (Chinook) salmon earlier, this question is about *non* salmon fish. Five of my favorite fish to go fishing for in Alaska are not types of salmon (though some may be salmonids). If you can guess even ONE of them (and I\'m gonna give you SIX tries for this), you get a point! Are you ready?');
 
-var fishArray = ['rainbow trout', 'burbot', 'halibut', 'dolly varden', 'steelhead'];
+var fishArray = ['rainbow trout', 'burbot', 'halibut', 'dolly varden', 'arctic char'];
 var fishGuess = prompt('GUESS A FISH: guess one of my five favorite non-salmon (salmonids are ok) fish to fish for in Alaska');
 console.log('q:fishGuess fish' + fishArray);
 console.log();
@@ -130,16 +130,16 @@ for (var i = 0; i < 6; i++) {
     var fishGuess = prompt('GUESS AGAIN BOZO (a fish that is not a salmon [it can be a salmonid] that is in my top 5 favorite to fish for in Alaska)');
     fishcounter++;
   } else if (fishArray.indexOf(fishGuess) !== -1 && fishcounter === 0) {
-    alert('WHOA! Great guess, ' + name + '! One shot kill! ' + fishGuess.uppercaseFirstLetter() + ' is indeed one of my top 5 favorite non-salmon fish to go fishing for in Alaska!');
+    alert('WHOA! Great guess, ' + name + '! One shot kill! ' + fishGuess.uppercaseFirstLetter() + ' is indeed one of my top 5 favorite non-salmon fish to go fishing for in Alaska, the whole list is: rainbow trout, burbot, halibut, dolly varden, and arctic char.');
     break;
   }
 }
 
 if (fishcounter === 6) {
-  alert('SIX GUESSES AND NO DICE? Wow. You know google exists right?');
+  alert('SIX GUESSES AND NO DICE? Wow. You know google exists right? Well, the whole list is: rainbow trout, burbot, halibut, dolly varden, and arctic char.');
 } else if (fishcounter > 0) {
   console.log(counter);
-  alert('Only took you ' + fishcounter + '/6 tries, huh?');
+  alert('Only took you ' + fishcounter + '/6 tries, huh? To get one? Well, the whole list is: rainbow trout, burbot, halibut, dolly varden, and arctic char.');
   counter++;
 }
 
