@@ -7,6 +7,12 @@ console.log(name);
 
 alert('WELCOME TO THE GAME, ' + name.toUpperCase() + '. Don\'t worry, it\'s not a very complicated game. The game is called THE LYING GAME (a friendly get to know ya). Are you ready to play? There are a couple different parts to the game. The first part is called TRUTH OR LIE? The rules are simple, you just answer yes if you think what I said is a truth, and no is you think it\'s the lie. If you don\'t follow the rules, I\'m gonna know you suck, and tell you so. Let\'s begin! (If you think you can hack it.)');
 
+function lyingGame() {
+  for (var i = 0; i < lyingGame.length; i++) {
+    var questionArray = [];
+    var answerArray = [];
+  }
+}
 var chinook = prompt('I have ridden in a military Chinook helicopter with my dog. (Remember, yes for truth, no for lie.)');
 console.log('q: chinook y/n (y)');
 console.log(chinook);
