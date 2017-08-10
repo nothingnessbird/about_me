@@ -81,32 +81,42 @@ function ashportation() {
   }
 }
 
+ashportation();
+
 alert('You made it all the way to the last question! (somehow) Now it\'s time for (you guessed it) another guessing game! I talked about a king (Chinook) salmon earlier, this question is about *non* salmon fish. Five of my favorite fish to go fishing for in Alaska are not types of salmon (though some may be salmonids). If you can guess even ONE of them (and I\'m gonna give you SIX tries for this), you get a point! Are you ready?');
 
-var fishArray = ['rainbow trout', 'burbot', 'halibut', 'dolly varden', 'arctic char'];
-var fishGuess = prompt('GUESS A FISH: guess one of my five favorite non-salmon (salmonids are ok) fish to fish for in Alaska');
-console.log('q:fishGuess fish' + fishArray);
-console.log();
+function fish() {
+//fish question[0], array of correct answers[1], incorrect response[2], one shot kill[3]
+  var fishArray = ['GUESS A FISH: guess one of my five favorite non-salmon (salmonids are ok) fish to fish for in Alaska', ['rainbow trout', 'burbot', 'halibut', 'dolly varden', 'arctic char'], 'GUESS AGAIN BOZO (a fish that is not a salmon [it can be a salmonid] that is in my top 5 favorite to fish for in Alaska)', 'WHOA! Great guess, ' + name + '! One shot kill! ' + fishGuess + ' is indeed one of my top 5 favorite non-salmon fish to go fishing for in Alaska, the whole list is: rainbow trout, burbot, halibut, dolly varden, and arctic char.'];
 
-var fishcounter = 0;
-for (var i = 0; i < 6; i++) {
-  if (fishArray.indexOf(fishGuess) === -1) {
-    console.log(fishcounter);
-    console.log(fishGuess);
-    var fishGuess = prompt('GUESS AGAIN BOZO (a fish that is not a salmon [it can be a salmonid] that is in my top 5 favorite to fish for in Alaska)');
-    fishcounter++;
-  } else if (fishArray.indexOf(fishGuess) !== -1 && fishcounter === 0) {
-    alert('WHOA! Great guess, ' + name + '! One shot kill! ' + fishGuess + ' is indeed one of my top 5 favorite non-salmon fish to go fishing for in Alaska, the whole list is: rainbow trout, burbot, halibut, dolly varden, and arctic char.');
-    break;
+  var fishGuess = prompt(fishArray[0]);
+  console.log(fishArray[0]);
+  console.log(fishArray[1]);
+  console.log(fishGuess);
+
+  var fishcounter = 0;
+  for (var i = 0; i < 6; i++) {
+    if (fishArray[1].includes(fishGuess.toLowerCase()) && fishcounter === 0) {
+      console.log(fishcounter);
+      console.log(fishGuess);
+      counter++;
+      break;
+      var fishGuess = prompt(fishArray[3]);
+    } else if (!fishArray[1].includes(fishGuess.toLowerCase())) {
+      console.log(fishGuess);
+      console.log(fishcounter);
+      alert(fishArray[2]);
+      fishcounter++;
+    }
   }
-}
 
-if (fishcounter === 6) {
-  alert('SIX GUESSES AND NO DICE? Wow. You know google exists right? Well, the whole list is: rainbow trout, burbot, halibut, dolly varden, and arctic char.');
-} else if (fishcounter > 0) {
-  console.log(counter);
-  alert('Only took you ' + fishcounter + '/6 tries, huh? To get one? Well, the whole list is: rainbow trout, burbot, halibut, dolly varden, and arctic char.');
-  counter++;
+  if (fishcounter === 6) {
+    alert('SIX GUESSES AND NO DICE? Wow. You know google exists right? Well, the whole list is: ' + fishArray[1].join(', '));
+  } else if (fishcounter > 0) {
+    console.log(counter);
+    alert('Only took you ' + fishcounter + '/6 tries, huh? To get one? Well, the whole list is: ' + fishArray[1].join(', '));
+    counter++;
+  }
 }
 
 if(counter === 7) {
