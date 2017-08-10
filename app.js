@@ -68,11 +68,11 @@ console.log('q: salmon y/n (y)');
 console.log(salmon);
 
 if(salmon.toUpperCase() === 'Y' || salmon.toUpperCase() === 'YES') {
-  alert('Alright, you got me...I GOT THAT FISH! That\'s the end of the lying portion, stay tuned for the rest of The Game!)
+  alert('Alright, you got me...I GOT THAT FISH! That\'s the end of the lying portion, stay tuned for the rest of The Game!');
   counter++;
   console.log(counter);
 } else {
-  alert('GOOD JOB NOT EVEN TRYING ASSHOLE');
+  alert('GOOD JOB NOT EVEN TRYING ASSHOLE. The lying part is done, I hope you do a little better on the next part.');
 }
 
 var ashportation = prompt('OK, new type of question! Are you ready? Can you follow directions? It\' super simple. My dog, Asha, is a service dog. She\'s been on a whole lot of different forms of transportation. I want you to GUESS how many forms of *water-based* (think like boats or ferries or jetskis) types of transportation Asha has been on. Enter your guess below.');
