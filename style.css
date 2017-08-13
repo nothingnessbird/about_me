@@ -1,6 +1,18 @@
 /** {
   border: 1px solid green;
 }*/
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  color: purple;
+}
+a:hover {
+  color: red;
+}
+a:active {
+  color: darkcyan;
+}
 header {
   margin: auto;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d8e0de+0,aebfbc+22,919191+33,8ea6a2+50,829d98+67,6b6b6b+82,969696+100 */
@@ -29,4 +41,7 @@ header h2 {
 .subheader1 {
   font-size: 1em;
   font-family: 'Comfortaa', cursive;
+}
+.truth {
+  font-family: 'Satisfy', cursive;
 }
