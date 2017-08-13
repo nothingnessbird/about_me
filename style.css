@@ -3,6 +3,7 @@
 }*/
 a:link {
   text-decoration: none;
+  color:inherit;
 }
 a:visited {
   color: purple;
@@ -42,6 +43,7 @@ header h2 {
   font-size: 1em;
   font-family: 'Comfortaa', cursive;
 }
-.truth {
+.subheader2 {
   font-family: 'Satisfy', cursive;
+  padding-bottom: .5em;
 }

@@ -39,13 +39,13 @@ lyingGame();
 
 function ashportation() {
   //question[0], correct answer[1], too low response[2], too high response[3], nonsense answer response[4], correct answer response[5]
-  var ashportationArray = ['OK, new type of question! Are you ready? Can you follow directions? It\' super simple. My dog, Asha, is a service dog. She\'s been on a whole lot of different forms of transportation. I want you to GUESS how many forms of *water-based* (think like boats or ferries or jetskis) types of transportation Asha has been on. Enter your guess below. You get FOUR tries, so make the best of them.', 27, 'TOO LOW. Nice try, but no dice. Give it another go, hot shot.', 'TOO HIGH. Nice try, but no dice. Give it another go, hot shot.', 'YOU DIDN\'T FOLLOW DIRECTIONS, NUMBSKULL. I SAID ENTER A NUMBER. Give it another go, hot shot.', []];
+  var ashportationArray = ['OK, new type of question! Are you ready? Can you follow directions? It\' super simple. My dog, Asha, is a service dog. She\'s been on a whole lot of different forms of transportation. I want you to GUESS how many forms of *water-based* (think like boats or ferries or jetskis) types of transportation Asha has been on. Enter your guess below. You get FOUR tries, so make the best of them.', 27, 'TOO LOW. Nice try, but no dice. Give it another go, hot shot.', 'TOO HIGH. Nice try, but no dice. Give it another go, hot shot.', 'YOU DIDN\'T FOLLOW DIRECTIONS, NUMBSKULL. I SAID ENTER A NUMBER. Give it another go, hot shot.'];
 
   var ashportation = prompt(ashportationArray[0]);
   console.log(ashportationArray[0]);
 
   var ashportationcounter = 0;
-  for (var i = 0; i < 4; i++) {
+  for (var i = 0; i < 3; i++) {
     if (parseInt(ashportation) === ashportationArray[1]) {
       console.log(counter);
       console.log(ashportation);
@@ -95,7 +95,7 @@ function fish() {
   console.log(fishGuess);
 
   var fishcounter = 0;
-  for (var i = 0; i < 6; i++) {
+  for (var i = 0; i < 5; i++) {
     if (fishArray[1].includes(fishGuess.toLowerCase()) && fishcounter === 0) {
       console.log(fishcounter);
       console.log(fishGuess);
