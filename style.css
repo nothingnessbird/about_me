@@ -10,16 +10,23 @@ header {
   background: linear-gradient(135deg, #d8e0de 0%,#aebfbc 22%,#919191 33%,#8ea6a2 50%,#829d98 67%,#6b6b6b 82%,#969696 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8e0de', endColorstr='#969696',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   text-align: center;
+  font-family: 'Poiret One', cursive;
 }
 h1 {
   font-family: 'Comfortaa', cursive;
   font-size: 6em;
   color: darkslategrey;
-  padding: .5em;
+  padding: .5em .5em .3em .5em;
+  margin-bottom: 0px;
 }
 body {
   margin: auto;
 }
-header, h2 {
-  
+header h2 {
+  margin-top: 0px;
+  font-size: 2em;
+}
+.subheader1 {
+  font-size: 1em;
+  font-family: 'Comfortaa', cursive;
 }
