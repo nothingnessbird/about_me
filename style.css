@@ -1,24 +1,36 @@
-* {
-  background-color: teal;
-  font-family: helvetica;
-  width: 700px;
+.wholething {
+  background-color: #BFFCD8;
+  }
+header {
+  border: 2px solid green;
+  }
+h1 {
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+  }
+a{
+  text-decoration: none;
+  color: inherit;
+  font-weight: 
+  }
+.navigation{
+  border: 2px dotted cyan;
+  }
+.navlink{
+  display: inline-block;
+  }
+.fishlist{
+  float: left;
+  }
+.fishimg{
+  float: right;
+  }
+.fishimg img{
+  display: block;
   }
   
-.main {
-font-family: garamond;
+.states {
+  display: inline-block; 
 }
 
-img.large {
-width: 500px;
-height: 310px;
-}
-
-img.medium {
-width: 340px;
-height: 410px;
-}
-
-img.small {
-width: 330px;
-height: 210px;
-}
