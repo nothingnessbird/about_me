@@ -14,7 +14,7 @@ a:hover {
 a:active {
   color: darkcyan;
 }
-header {
+.topbar {
   margin: auto;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d8e0de+0,aebfbc+22,919191+33,8ea6a2+50,829d98+67,6b6b6b+82,969696+100 */
   background: #d8e0de; /* Old browsers */
@@ -34,6 +34,7 @@ h1 {
 }
 body {
   margin: auto;
+  width: 90%;
 }
 header h2 {
   margin-top: 0px;
@@ -45,5 +46,27 @@ header h2 {
 }
 .subheader2 {
   font-family: 'Satisfy', cursive;
-  padding-bottom: .5em;
+  padding-bottom: 2em;
+  font-size: 1em;
+}
+nav, ul {
+  list-style-type: none;
+  margin: 0;
+  font-size: 1.5em;
+  display: inline-grid;
+}
+.navlist li {
+  border: 2px solid black;
+  padding-left: .1em;
+  padding-right: .1em;
+  margin-left: .1em;
+  margin-right: .1em;
+}
+.wholething {
+  box-sizing: border-box;
+}
+.toplink {
+  position: fixed;
+  bottom: 0px;
+  right: 0;
 }

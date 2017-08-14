@@ -4,6 +4,11 @@ var counter = 0;
 
 var name = prompt('What\'s your name, buddy?');
 console.log(name);
+var nameFirstLetter = name.charAt(0);
+var uppcasedNameFirstLetter = name.charAt(0).toUpperCase();
+var restOfName = name.slice(1);
+var fancyName = uppcasedNameFirstLetter + restOfName;
+console.log(fancyName);
 
 alert('WELCOME TO THE GAME, ' + name.toUpperCase() + '. Don\'t worry, it\'s not a very complicated game. The game is called THE LYING GAME (a friendly get to know ya). Are you ready to play? There are a couple different parts to the game. The first part is called TRUTH OR LIE? The rules are simple, you just answer yes if you think what I said is a truth, and no if you think it\'s a lie. If you don\'t follow the rules, I\'m gonna know you suck, and tell you so. Let\'s begin! (If you think you can hack it.)');
 
@@ -99,7 +104,7 @@ alert('You made it all the way to the last question! (somehow) Now it\'s time fo
 
 function fish() {
 //fish question[0], array of correct answers[1], incorrect response[2], one shot kill[3]
-  var fishArray = ['GUESS A FISH: guess one of my five favorite non-salmon (salmonids are ok) fish to fish for in Alaska', ['rainbow trout', 'burbot', 'halibut', 'dolly varden', 'arctic char'], 'GUESS AGAIN BOZO (a fish that is not a salmon [it can be a salmonid] that is in my top 5 favorite to fish for in Alaska)', 'WHOA! Great guess, ' + name + '! That is is indeed one of my top 5 favorite non-salmon fish to go fishing for in Alaska!'];
+  var fishArray = ['GUESS A FISH: guess one of my five favorite non-salmon (salmonids are ok) fish to fish for in Alaska', ['rainbow trout', 'burbot', 'halibut', 'dolly varden', 'arctic char'], 'GUESS AGAIN BOZO (a fish that is not a salmon [it can be a salmonid] that is in my top 5 favorite to fish for in Alaska)', 'WHOA! Great guess, ' + fancyName + '! That is is indeed one of my top 5 favorite non-salmon fish to go fishing for in Alaska!'];
 
   var CHANCES = 6;
   var fishCounter = 0;
@@ -145,11 +150,11 @@ function fish() {
 fish();
 
 if(counter === 7) {
-  alert('Holy crap, ' + name + '! What are you?! A stalker?! You got 7/7 correct! How did you know so damn much about me? I don\'t know if you\'re preternaturally good at guessing games, have *really* good luck, or you\'ve been playing this game over and over until you got them all right. Whatever it is, I\'m creeped out. But I guess you can look at the page anyway and see some pictures and stuff of me in the Last Frontier. Have fun creep!');
+  alert('Holy crap, ' + fancyName + '! What are you?! A stalker?! You got 7/7 correct! How did you know so damn much about me? I don\'t know if you\'re preternaturally good at guessing games, have *really* good luck, or you\'ve been playing this game over and over until you got them all right. Whatever it is, I\'m creeped out. But I guess you can look at the page anyway and see some pictures and stuff of me in the Last Frontier. Have fun creep!');
 } else if (counter >= 3 && counter <= 6) {
-  alert('Not too shabby, ' + name + '. I grudgingly concede that you\'re not complete shit at guessing games (or you cheated and played more than once). You got ' + counter + '/7 correct. That\'s not the worst score I\'ve ever seen. You may now feast your eyes on pictures and information of yours truly in the Last Frontier.');
+  alert('Not too shabby, ' + fancyName + '. I grudgingly concede that you\'re not complete shit at guessing games (or you cheated and played more than once). You got ' + counter + '/7 correct. That\'s not the worst score I\'ve ever seen. You may now feast your eyes on pictures and information of yours truly in the Last Frontier.');
 } else if (counter === 2 || counter === 1) {
-  alert('Oh come ON, ' + name + '. IS that *really* the best you can do? ' + counter + '/7? That\'s pathetic. I almost don\'t even want you to see my page, but I guess you can...It\'s a bunch of awesome pictures and stuff about me in the Last Frontier. You definitely don\'t deserve it, but have at it.');
+  alert('Oh come ON, ' + fancyName + '. IS that *really* the best you can do? ' + counter + '/7? That\'s pathetic. I almost don\'t even want you to see my page, but I guess you can...It\'s a bunch of awesome pictures and stuff about me in the Last Frontier. You definitely don\'t deserve it, but have at it.');
 } else if (counter === 0) {
   alert('YOU GOT 0/7. FREAKING ZE-RO, ' + name.toUpperCase() + '. HOW DO YOU EVEN GET SUCH A RIDICULOUS SCORE?');
   var REPEAT = 5;
@@ -159,4 +164,8 @@ if(counter === 7) {
     alert(songCycle[1]);
   }
   alert('Yeah so I guess even though you don\'t remotely deserve it, you can look at my site, with my awesome pictures and stuff about me in the Last Frontier');
+}
+if (name != '') {
+  var element = document.getElementById('name');
+  element.innerHTML = ', ' + fancyName;
 }
