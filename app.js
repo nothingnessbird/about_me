@@ -44,39 +44,50 @@ function ashportation() {
   var ashportation = prompt(ashportationArray[0]);
   console.log(ashportationArray[0]);
 
-  var ashportationcounter = 0;
-  for (var i = 0; i < 3; i++) {
+  var ashportationCounter = 0;
+  var CHANCES = 4;
+  var rightAnswer = false;
+  for (var i = 0; i < CHANCES; i++) {
+    if (i === 4 && !rightAnswer){
+      break;
+    }
     if (parseInt(ashportation) === ashportationArray[1]) {
+      rightAnswer = true;
       console.log(counter);
       console.log(ashportation);
+      console.log('this happened');
+      ashportationCounter++;
       counter++;
       break;
     } else if (parseInt(ashportation) < ashportationArray[1]) {
-      console.log(ashportationcounter);
+      rightAnswer = false;
+      console.log(ashportationCounter);
       console.log(ashportation);
-      ashportationcounter++;
+      ashportationCounter++;
       var ashportation = prompt(ashportationArray[2]);
     } else if (parseInt(ashportation) > ashportationArray[1]) {
+      rightAnswer = false;
       console.log(ashportation);
-      console.log(ashportationcounter);
-      ashportationcounter++;
+      console.log(ashportationCounter);
+      ashportationCounter++;
       var ashportation = prompt(ashportationArray[3]);
     } else {
+      rightAnswer = false;
       console.log(ashportation);
-      console.log(ashportationcounter);
-      ashportationcounter++;
+      console.log(ashportationCounter);
+      ashportationCounter++;
       var ashportation = prompt(ashportationArray[4]);
     }
   }
-
-  console.log(ashportationcounter);
-  if (ashportationcounter === 4) {
+  console.log(rightAnswer);
+  console.log(ashportationCounter);
+  if (ashportationCounter === 4 && rightAnswer === false) {
     alert('FOUR TRIES and you never got it?! You\'re lucky I\'m giving you SIX in the next question.');
-  } else if (ashportationcounter > 0) {
+  } else if (ashportationCounter > 0) {
     console.log(counter);
-    alert('Not toooooo bad..... it only took you ' + ashportationcounter + '/4 tries to get it. WITH HELP. I hope you do a little better on the next one, slick, it\'s your last chance');
+    alert('Not toooooo bad..... it only took you ' + ashportationCounter + '/4 tries to get it. WITH HELP. I hope you do a little better on the next one, slick, it\'s your last chance');
     counter++;
-  } else if (ashportationcounter === 0) {
+  } else if (ashportationCounter === 0) {
     alert('HOLY COW! How did you guess that right off?! One and done. Great job. I almost want to give you two points (but I won\'t). Your prize is....another question!');
   }
 }
@@ -94,27 +105,28 @@ function fish() {
   console.log(fishArray[1]);
   console.log(fishGuess);
 
-  var fishcounter = 0;
-  for (var i = 0; i < 5; i++) {
-    if (fishArray[1].includes(fishGuess.toLowerCase()) && fishcounter === 0) {
-      console.log(fishcounter);
+  var CHANCES = 6;
+  var fishCounter = 0;
+  for (var i = 0; i < CHANCES; i++) {
+    if (fishArray[1].includes(fishGuess.toLowerCase()) && fishCounter === 0) {
+      console.log(fishCounter);
       console.log(fishGuess);
       counter++;
-      break;
       var fishGuess = prompt(fishArray[3]);
+      break;
     } else if (!fishArray[1].includes(fishGuess.toLowerCase())) {
       console.log(fishGuess);
-      console.log(fishcounter);
+      console.log(fishCounter);
       var fishGuess = prompt(fishArray[2]);
-      fishcounter++;
+      fishCounter++;
     }
   }
 
-  if (fishcounter === 6) {
+  if (fishCounter === 6) {
     alert('SIX GUESSES AND NO DICE? Wow. You know google exists right? Well, the whole list is: ' + fishArray[1].join(', '));
-  } else if (fishcounter > 0) {
+  } else if (fishCounter > 0) {
     console.log(counter);
-    alert('Only took you ' + fishcounter + '/6 tries, huh? To get one? Well, the whole list is: ' + fishArray[1].join(', '));
+    alert('Only took you ' + fishCounter + '/6 tries, huh? To get one? Well, the whole list is: ' + fishArray[1].join(', '));
     counter++;
   }
 }
@@ -129,13 +141,11 @@ if(counter === 7) {
   alert('Oh come ON, ' + name + '. IS that *really* the best you can do? ' + counter + '/7? That\'s pathetic. I almost don\'t even want you to see my page, but I guess you can...It\'s a bunch of awesome pictures and stuff about me in the Last Frontier. You definitely don\'t deserve it, but have at it.');
 } else if (counter === 0) {
   alert('YOU GOT 0/7. FREAKING ZE-RO, ' + name.toUpperCase() + '. HOW DO YOU EVEN GET SUCH A RIDICULOUS SCORE?');
-  alert('you don\'t know me');
-  alert('you don\'t know me at all');
-  alert('you don\'t know me');
-  alert('you don\'t know me at all');
-  alert('you don\'t know me');
-  alert('you don\'t know me at all');
-  alert('you don\'t know me');
-  alert('you don\'t know me at all');
+  var REPEAT = 5;
+  for (var i = 0; i < REPEAT; i++) {
+    var songCycle = ['you don\'t know me', 'you don\'t know me at all'];
+    alert(songCycle[0]);
+    alert(songCycle[1]);
+  }
   alert('Yeah so I guess even though you don\'t remotely deserve it, you can look at my site, with my awesome pictures and stuff about me in the Last Frontier');
 }
