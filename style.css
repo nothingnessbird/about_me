@@ -1,6 +1,10 @@
 /** {
   border: 1px solid green;
 }*/
+.wholething {
+  box-sizing: border-box;
+  font-family: 'Poiret One', cursive;
+}
 a:link {
   text-decoration: none;
   color:inherit;
@@ -62,11 +66,53 @@ nav, ul {
   margin-left: .1em;
   margin-right: .1em;
 }
-.wholething {
-  box-sizing: border-box;
-}
 .toplink {
   position: fixed;
   bottom: 0px;
   right: 0;
+}
+.fishlist {
+  float: left;
+}
+.fishimg {
+  float: inherit;
+  display: grid;
+}
+.fishlist {
+  margin-top: 0px;
+}
+.fishlist ol li {
+  font-size: 1.3em;
+  padding-top: 300px;
+}
+.jobs {
+  display: inline-flex;
+}
+.joblist ul {
+  list-style-type: disc;
+}
+.statelist {
+  list-style-type: disc;
+  font-size: 2em;
+}
+#florida {
+  list-style-image: url(http://cdn.mysitemyway.com/icons-watermarks/simple-black-gradient/states/states_florida/states_florida_simple-black-gradient_64x64.png);
+}
+#maine {
+  list-style-image: url(http://cdn.mysitemyway.com/icons-watermarks/simple-black-gradient/states/states_maine/states_maine_simple-black-gradient_64x64.png);
+}
+#michigan {
+  list-style-image: url(http://cdn.mysitemyway.com/icons-watermarks/simple-black-gradient/states/states_michigan/states_michigan_simple-black-gradient_64x64.png);
+}
+#ohio {
+  list-style-image: url(http://cdn.mysitemyway.com/icons-watermarks/simple-black-gradient/states/states_michigan/states_michigan_simple-black-gradient_64x64.png);
+}
+.states h2 {
+  font-size: 4em;
+}
+.states p {
+  font-size: 1.5em;
+}
+.jobs h2 {
+  font-size: 1.8em;
 }
