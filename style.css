@@ -1,36 +1,72 @@
-.wholething {
-  background-color: #BFFCD8;
-  }
-header {
-  border: 2px solid green;
-  }
-h1 {
-  font-weight: bold;
-  font-size: 2em;
-  text-align: center;
-  }
-a{
+/** {
+  border: 1px solid green;
+}*/
+a:link {
   text-decoration: none;
-  color: inherit;
-  font-weight: 
-  }
-.navigation{
-  border: 2px dotted cyan;
-  }
-.navlink{
-  display: inline-block;
-  }
-.fishlist{
-  float: left;
-  }
-.fishimg{
-  float: right;
-  }
-.fishimg img{
-  display: block;
-  }
-  
-.states {
-  display: inline-block; 
+  color:inherit;
 }
-
+a:visited {
+  color: purple;
+}
+a:hover {
+  color: red;
+}
+a:active {
+  color: darkcyan;
+}
+.topbar {
+  margin: auto;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d8e0de+0,aebfbc+22,919191+33,8ea6a2+50,829d98+67,6b6b6b+82,969696+100 */
+  background: #d8e0de; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #d8e0de 0%, #aebfbc 22%, #919191 33%, #8ea6a2 50%, #829d98 67%, #6b6b6b 82%, #969696 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #d8e0de 0%,#aebfbc 22%,#919191 33%,#8ea6a2 50%,#829d98 67%,#6b6b6b 82%,#969696 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #d8e0de 0%,#aebfbc 22%,#919191 33%,#8ea6a2 50%,#829d98 67%,#6b6b6b 82%,#969696 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8e0de', endColorstr='#969696',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  text-align: center;
+  font-family: 'Poiret One', cursive;
+}
+h1 {
+  font-family: 'Comfortaa', cursive;
+  font-size: 6em;
+  color: darkslategrey;
+  padding: .5em .5em .3em .5em;
+  margin-bottom: 0px;
+}
+body {
+  margin: auto;
+  width: 90%;
+}
+header h2 {
+  margin-top: 0px;
+  font-size: 2em;
+}
+.subheader1 {
+  font-size: 1em;
+  font-family: 'Comfortaa', cursive;
+}
+.subheader2 {
+  font-family: 'Satisfy', cursive;
+  padding-bottom: 2em;
+  font-size: 1em;
+}
+nav, ul {
+  list-style-type: none;
+  margin: 0;
+  font-size: 1.5em;
+  display: inline-grid;
+}
+.navlist li {
+  border: 2px solid black;
+  padding-left: .1em;
+  padding-right: .1em;
+  margin-left: .1em;
+  margin-right: .1em;
+}
+.wholething {
+  box-sizing: border-box;
+}
+.toplink {
+  position: fixed;
+  bottom: 0px;
+  right: 0;
+}

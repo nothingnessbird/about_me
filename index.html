@@ -2,55 +2,55 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="reset.css" type="text/css"/>
+    <!-- <link rel="stylesheet" href="reset.css" type="text/css"/> -->
     <link rel="stylesheet" href="style.css" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Poiret+One|Satisfy" rel="stylesheet">
     <title>nothingnessbird</title>
   </head>
   <body>
     <div class="wholething">
-      <header>
-        <h1>Welcome to Nothingness Bird, Kinley's About Me Page</h1>
-        <div class="subheader1">
-          <p>You survived The Lying Game! Congratulations!</p>
-        </div>
-        <div class="subheader2">
-        <a class="truth" href="http://bit.ly/2qOhil2">Speak the truth, even if your voice trembles.</a>
-        </div>
-      </header>
-      <div class="navigation">
-        <nav>
-          <div class="navlisttoprow">
-            <ul>
-              <div class="navlink">
-                <a href="#statesid"><li>States</li></a>
-                <div class="navinfo">
-                  <li>(the ones I <em>haven't</em> been to)</li>
-                </div>
-              </div>
-              <div class="navlink">
-                <a href="#"><li>Jobs</li></a>
-                <div class="navinfo">
-                  <li>(and why they didn't stick)</li>
-                </div>
-              </div>
-              <div class="navlink">
-                <a href="#"><li>Fish</li></a>
-                <div class="navinfo">
-                  <li>(seriously this should be self explanatory)</li>
-                </div>
-              </div>
-              <div class="navlink">
-                <a href="https://docs.google.com/spreadsheets/d/12EZbTNNqE_4JJgzymVWKsQgmiODtH5T7aoGS_k-4OYg/edit?usp=sharing" target="_blank"><li>Ashportation</li></a>
-                <div class="navinfo">
-                  <li>(check out all the forms of transportation Asha [<a href="http://www.instagram.com/ashabashadog" target="_blank">Kinley's dog</a>] has been on!)</li>
-                </div>
-              </div>
-            </ul>
+      <div class="topbar">
+        <header id="pagetop">
+          <h1>nothingnessbird</h1>
+          <h2>Kinley's Alaskan(ish) About Me</h2>
+          <div class="subheader1">
+            <p>You survived The Lying Game<span id="name"></span>! Congratulations!</p>
           </div>
-        </nav>
+          <div class="subheader2">
+            <a class="truth" href="http://bit.ly/2qOhil2" title="Leave anonymous feedback" target="_blank">Speak the truth, even if your voice trembles.</a>
+          </div>
+        </header>
+        <div class="navigation">
+          <nav>
+            <div class="navlist">
+              <ul>
+                <div class="navlink">
+                  <a href="#statesid" title="(the ones I haven't been to)"><li>States</li></a>
+                </div>
+                <div class="navlink">
+                  <a href="#jobsid" title="(the ones that didn't stick)"><li>Jobs</li></a>
+                </div>
+                <div class="navlink">
+                  <a href="#fishid" title="(seriously this should be self explanatory)"><li>Fish</li></a>
+                </div>
+                <div class="navlink">
+                  <a href="http://www.instagram.com/ashabashadog" title="Kinley's Service Dog" target="_blank"><li>Asha</li></a>
+                </div>
+                <div class="navlink">
+                  <a href="https://docs.google.com/spreadsheets/d/12EZbTNNqE_4JJgzymVWKsQgmiODtH5T7aoGS_k-4OYg/edit?usp=sharing" title="(check out all the forms of transportation Asha has been on!)" target="_blank"><li>Ashportation</li></a>
+                </div>
+                <div class="navlink">
+                  <a href="https://www.nps.gov/yell/learn/nature/grand-canyon.htm" title="(of the Yellowstone)" target="_blank"><li>Grand Canyon</li></a>
+                </div>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </div>
       <div class="main">
-        <h1>this has a heading for the site</h1>
+        <div class="toplink">
+          <a href="#pagetop"><img src="http://i.imgur.com/opp7TUQ.jpg" title="link to top of page"alt="nothingnessbird sculpture from sydney australia, wih text reading back to top"></a>
+        </div>
         <div class="states" id="statesid">
           <h2>States (that I haven't been to)!</h2>
           <div class="statelist">
@@ -63,10 +63,10 @@
           </div>
           <div class="stateimg">
             <img src="http://i.imgur.com/Jw6NBzz.png" alt="picture of United States, marked with states I've been to and lived in">
-            I want to have some info saying that the (orange?) states are ones I've visited and the green states are ones I've lived in.
+            <p>The greeen states are places I have lived. The red states are places I have visited. The grey states I haven't been to (Yet! Growth mindset!)</p>
           </div>
         </div>
-        <div class="jobs">
+        <div class="jobs" id="jobsid">
           <div class="jobhead">
             <h2>These are just a few of the jobs that haven't worked out!</h2>
           </div>
@@ -87,7 +87,7 @@
             <img src="http://i.imgur.com/UMtWZbl.jpg" alt="Kinley in a Flextronics shirt and an Apple hat">
           </div>
         </div>
-        <div class="fish">
+        <div class="fish" id="fishid">
           <div class="fishhead">
             <h2>Top Ten Fish I've Fished For in Alaska</h2>
           </div>
@@ -130,5 +130,5 @@
       </div>
     </div>
   </body>
-  <script src="app.js"></script>
+<!-- <script src="app.js"></script> -->
 </html>
